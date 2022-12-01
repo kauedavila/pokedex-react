@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Header from "./components/header";
 import PokeInfo from "./components/poke-info";
 import Roster from "./components/roster";
 
@@ -8,7 +9,8 @@ function App() {
   const [pokeInfo, setPokeInfo] = useState(0);
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center">
+      <Header />
       {pageState === "" && (
         <Roster
           pageState={pageState}

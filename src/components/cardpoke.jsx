@@ -12,7 +12,7 @@ export default function CardPoke({ poke }) {
   fetchData();
 
   return (
-    <div className="flex flex-col items-center bg-gray-900  rounded-[20px]  px-8 w-[150px] h-[150px]">
+    <div className="flex flex-col items-center bg-gray-900 border-2 border-red-500 rounded-[20px]  px-8 w-[150px] h-[150px]">
       <img
         src={
           poke === 0

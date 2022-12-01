@@ -34,15 +34,15 @@ export default function PokeInfo(props) {
   }
 
   return (
-    <div className="flex justify-end bg-gray-900 mx-20 my-10 py-12 px-28 rounded-[20px]">
+    <div className="flex justify-end bg-gray-900 mx-20 my-10 py-8 px-14 rounded-[20px] ">
       <div
         className="absolute text-white font-bold cursor-pointer"
         onClick={() => handleClick()}
       >
         X
       </div>
-      <section className="grid grid-cols-[1fr,2fr] gap-x-16 py-12">
-        <section className=" bg-gray-500 flex flex-col gap-y-2 justify-center items-center rounded-[20px] p-20">
+      <section className="grid grid-cols-[1fr,2fr] gap-x-16 py-8">
+        <section className=" bg-gray-500 border-2 border-white flex flex-col gap-y-2 justify-center items-center rounded-[20px] p-20">
           <section className="flex flex-col">
             <PokeBallCss />
             <img
@@ -80,7 +80,7 @@ export default function PokeInfo(props) {
             </p>
           ))}
         </section>
-        <section className="flex flex-col gap-y-10 items-start rounded-[20px] p-10 w-full bg-gray-500 ">
+        <section className="flex flex-col gap-y-10 items-start rounded-[20px] p-10 w-full bg-gray-500 border-2 border-white">
           <h1 className="text-white font-bold text-3xl self-center">
             Base Stats
           </h1>

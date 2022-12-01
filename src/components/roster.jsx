@@ -7,13 +7,13 @@ export default function Roster(props) {
   const { pageState, setPageState, pokeInfo, setPokeInfo } = props;
   const [poke, setPoke] = useState();
   const [offset, setOffset] = useState(0);
-  const [total, setTotal] = useState(0);
+  const total = 905;
   const limit = 36;
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await getPokeList(limit, offset);
-      return setPoke(response), setTotal(response.count);
+      return setPoke(response);
     };
 
     fetchData();
@@ -33,13 +33,13 @@ export default function Roster(props) {
             key={k}
             onClick={(e) => handleClick(k + offset)}
           >
-            {
+            {k + offset < 905 && (
               <CardPoke
                 poke={k + offset}
                 pageState={pageState}
                 setPageState={setPageState}
               />
-            }
+            )}
           </div>
         ))}
       </div>
