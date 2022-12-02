@@ -9,7 +9,7 @@ export default function CardPoke({ poke }) {
     return setPokeCard(response);
   };
 
-  fetchData();
+  poke !== 0 && fetchData();
 
   return (
     <div className="flex flex-col items-center bg-gray-900 border-2 border-red-500 rounded-[20px]  px-8 w-[150px] h-[150px]">
@@ -21,10 +21,10 @@ export default function CardPoke({ poke }) {
         }
         alt=""
       />
-      <p className="flex flex-col justify-center text-center text-white font-bold ">
+      <div className="flex flex-col justify-center text-center text-white font-bold ">
         <div>{poke !== 0 && `#${pokeCard?.id}`}</div>
         {poke === 0 ? "Random" : `${pokeCard?.name}`}
-      </p>
+      </div>
     </div>
   );
 }
