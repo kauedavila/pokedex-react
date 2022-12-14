@@ -1,17 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { getPokeInfo } from "../services/pokeRequest";
 import PokeImage from "./poke-image";
 import PokeStats from "./poke-stats";
 
-export default function PokeInfo() {
+export default function PokeInfo(props) {
+  const { total } = props;
   const poke = Number(location.pathname.replace("/pokemon/", ""));
 
   const [pokeCard, setPokeCard] = useState();
   const [spriteUrl, setSpriteUrl] = useState();
 
   const fetchData = async () => {
-    const response = await getPokeInfo(poke);
+    const response = await getPokeInfo(poke, total);
+    if (!response) return <Navigate to={"/"} />;
+
     return (
       setPokeCard(response),
       !spriteUrl && setSpriteUrl(response.sprites.other.home.front_default)

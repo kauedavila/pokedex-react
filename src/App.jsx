@@ -5,35 +5,15 @@ import PokeInfo from "./components/poke-info";
 import Roster from "./components/roster";
 
 function App() {
-  const [pageState, setPageState] = useState("");
-  const [pokeInfo, setPokeInfo] = useState(0);
+  const total = 905;
 
   return (
     <Router>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Roster
-              pageState={pageState}
-              setPageState={setPageState}
-              pokeInfo={pokeInfo}
-              setPokeInfo={setPokeInfo}
-            />
-          }
-        />
+        <Route path="/" element={<Roster total={total} />} />
 
-        <Route
-          path="/pokemon/:id"
-          element={
-            <PokeInfo
-              poke={pokeInfo}
-              pageState={pageState}
-              setPageState={setPageState}
-            />
-          }
-        />
+        <Route path="/pokemon/:id" element={<PokeInfo total={total} />} />
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </Router>
