@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import PokeInfo from "./components/poke-info";
 import Roster from "./components/roster";
@@ -8,25 +9,34 @@ function App() {
   const [pokeInfo, setPokeInfo] = useState(0);
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <Router>
       <Header />
-      {pageState === "" && (
-        <Roster
-          pageState={pageState}
-          setPageState={setPageState}
-          pokeInfo={pokeInfo}
-          setPokeInfo={setPokeInfo}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Roster
+              pageState={pageState}
+              setPageState={setPageState}
+              pokeInfo={pokeInfo}
+              setPokeInfo={setPokeInfo}
+            />
+          }
         />
-      )}
 
-      {pageState === "info" && (
-        <PokeInfo
-          poke={pokeInfo}
-          pageState={pageState}
-          setPageState={setPageState}
+        <Route
+          path="/pokemon/:id"
+          element={
+            <PokeInfo
+              poke={pokeInfo}
+              pageState={pageState}
+              setPageState={setPageState}
+            />
+          }
         />
-      )}
-    </div>
+        <Route path="*" element={<div>404</div>} />
+      </Routes>
+    </Router>
   );
 }
 
