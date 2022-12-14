@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import Header from "./components/header";
 import PokeInfo from "./components/poke-info";
 import Roster from "./components/roster";

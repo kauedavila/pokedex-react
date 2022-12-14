@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className="flex flex-col items-center justify-center rounded-b-xl bg-red-500 py-8 w-full">
+    <div className="flex flex-col items-center justify-center rounded-b-xl bg-red-500 py-8 w-[100vw]">
       <img
         src={"/images/logo_poke.png"}
         alt=""

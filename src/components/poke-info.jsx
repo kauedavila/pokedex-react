@@ -24,21 +24,23 @@ export default function PokeInfo(props) {
   }
 
   return (
-    <div className="flex justify-end bg-gray-900 mx-20 my-10 py-8 px-14 rounded-[20px] ">
+    <div className="flex flex-col items-end bg-gray-900 my-10 gap-y-5 pt-5 pb-5 px-2 sm:px-5 sm:mx-10 rounded-[20px]">
       <div
-        className="absolute text-white font-bold cursor-pointer"
+        className="text-white font-bold cursor-pointer bg-gray-500 rounded-full aspect-square w-10 h-10 flex justify-center items-center border-2 border-white"
         onClick={() => handleClick()}
       >
         X
       </div>
-      <section className="grid grid-cols-[1fr,2fr] gap-x-16 py-8">
-        <PokeImage
-          pokeCard={pokeCard}
-          spriteUrl={spriteUrl}
-          setSpriteUrl={setSpriteUrl}
-        />
-        <PokeStats pokeCard={pokeCard} />
-      </section>
+      <div className="flex justify-center">
+        <section className="grid gap-y-5 sm:grid-cols-[1fr,2fr] gap-x-16">
+          <PokeImage
+            pokeCard={pokeCard}
+            spriteUrl={spriteUrl}
+            setSpriteUrl={setSpriteUrl}
+          />
+          <PokeStats pokeCard={pokeCard} />
+        </section>
+      </div>
     </div>
   );
 }
