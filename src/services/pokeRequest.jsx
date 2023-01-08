@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+const baseUrl = "https://pokeapi.co/api/v2/";
 
 export const getPokeList = async (limit, offset) => {
   try {
     const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+      `${baseUrl}pokemon?offset=${offset}&limit=${limit}`
     );
     const data = await response.json();
     return data;
@@ -21,7 +22,7 @@ export const getPokeInfo = async (pokid, total) => {
   }, [pokid]);
 
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokid}`);
+    const response = await fetch(`${baseUrl}/pokemon/${pokid}`);
     const data = await response.json();
     return data;
   } catch (e) {}

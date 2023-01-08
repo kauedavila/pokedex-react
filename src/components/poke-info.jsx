@@ -37,6 +37,7 @@ export default function PokeInfo(props) {
             spriteUrl={spriteUrl}
             setSpriteUrl={setSpriteUrl}
           />
+
           <PokeStats pokeCard={pokeCard} />
         </section>
       </div>

@@ -25,7 +25,7 @@ export default function Roster(props) {
         {poke?.results.map((_, k) => (
           <Link key={k} to={`/pokemon/${k + offset}`}>
             <div className="capitalize cursor-pointer">
-              {k + offset < 905 && <CardPoke poke={k + offset} />}
+              {k + offset <= 905 && <CardPoke poke={k + offset} />}
             </div>
           </Link>
         ))}
