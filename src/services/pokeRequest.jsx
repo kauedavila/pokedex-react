@@ -22,7 +22,7 @@ export const getPokeInfo = async (pokid, total) => {
   }, [pokid]);
 
   try {
-    const response = await fetch(`${baseUrl}/pokemon/${pokid}`);
+    const response = await fetch(`${baseUrl}pokemon/${pokid}`);
     const data = await response.json();
     return data;
   } catch (e) {}

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { getPokeInfo } from "../services/pokeRequest";
-import PokeImage from "./poke-image";
-import PokeStats from "./poke-stats";
+import PokeImage from "../components/poke-image";
+import PokeStats from "../components/poke-stats";
 
 export default function PokeInfo(props) {
   const { total } = props;
